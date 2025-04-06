@@ -11,7 +11,10 @@ namespace Redis.Controllers
         {
             this.redis = redis;
         }
-
+        public IActionResult Index()
+        {
+            return View();
+        }
         [HttpGet("Get")]
         public async Task<string> GetRedis(string? key)
         {
