@@ -16,7 +16,7 @@ namespace Redis.Controllers
             return View();
         }
         [HttpGet("Get")]
-        public async Task<string> GetRedis([FromForm] string? key)
+        public async Task<string> GetRedis(string? key)
         {
             if (string.IsNullOrEmpty(key))
             {
