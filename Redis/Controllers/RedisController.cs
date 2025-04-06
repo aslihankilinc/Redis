@@ -16,7 +16,7 @@ namespace Redis.Controllers
             return View();
         }
         [HttpGet("Get")]
-        public async Task<string> GetRedis(string? key)
+        public async Task<string> GetRedis([FromForm] string? key)
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -26,7 +26,7 @@ namespace Redis.Controllers
         }
                
         [HttpPost("Set")]
-        public async Task<string> SetRedis(string key, string value)
+        public async Task<string> SetRedis([FromForm] string key, [FromForm] string value)
         {
             if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value))
             {
